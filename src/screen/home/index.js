@@ -31,7 +31,7 @@ export default function App({navigation}) {
           <GoBack />
         </Pressable>
 
-        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:16, lineHeight:30, fontWeight:'400', marginLeft:33}}>Settings</Text>
+        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:16, lineHeight:30, fontWeight:'400', marginLeft:33}}>Home</Text>
 
       </View>
     
