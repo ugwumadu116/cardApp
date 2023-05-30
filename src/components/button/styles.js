@@ -1,11 +1,10 @@
 import styled from 'styled-components/native'
 
 export const Container = styled.TouchableOpacity`
-  min-width: 100px;
-  min-height: 50px;
+  height: 56px;
   justify-content: center;
   align-items: center;
-  background-color: ${({theme}) => theme.colors.moneyWorksPrimary};
+  background-color: #3F37C9;
   border-radius: 10px;
   width: 100%;
 `

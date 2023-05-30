@@ -3,7 +3,6 @@ import { StyleSheet, View, ScrollView, Pressable } from 'react-native';
 import PhoneInput from '../../components/input/PhoneInput'
 import Input from '../../components/input'
 import { InputSecureText } from '../../components/input/InputSecureText'
-import { InputText } from '../../components/input/InputText'
 import Text from '../../components/Text'
 import {GlassBoardLayout} from  '../../components/layouts/GlassBoardLayout'
 import Button from '../../components/button'

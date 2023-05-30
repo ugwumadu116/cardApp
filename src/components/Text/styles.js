@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 
 export const TextContainer = styled.Text`
     font-size: 36px;
-    color: ${({theme}) => theme.colors.black2};
+    color: #000000;
     display: flex;
     justify-content: center;
     align-items:center;

@@ -354,7 +354,7 @@ export default function App({navigation}) {
                       }}
                     />
                     <Button 
-                      title="Create account xx"
+                      title="Create account"
                       family="proximaNovaRegular"
                       style={{backgroundColor: '#FFC300',  borderColor:"#FFC300", borderWidth:1, width:"100%", height:56, justifyContent:'center', alignItems:'center',marginTop:8, }}
                       textStyle={{fontSize: 16, fontWeight: '400',  color:"#000000", lineHeight:20, textAlign:'center'}}

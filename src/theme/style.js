@@ -11,5 +11,4 @@ const fontSize = {
   SMALL_SIZE: 12,
 }
 
-// App theme
 export const theme = {colors,fontSize}

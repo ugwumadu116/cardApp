@@ -25,6 +25,7 @@ import SettingsStack from './settingsStack'
 
 
 
+
 export default function App() {
   const ref = useRef(null);
   const _renderIcon = (routeName, selectedTab) => {
@@ -147,7 +148,7 @@ export default function App() {
         <CurvedBottomBarExpo.Screen
           name="Homes"
           position="CIRCLE"
-          component={(props) => <HomeStack joel={ref} {...props} />}
+          component={(props) => <HomeStack bottomBarRef={ref} {...props} />}
         />
         <CurvedBottomBarExpo.Screen
           name="Accounts"

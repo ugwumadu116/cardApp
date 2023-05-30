@@ -48,6 +48,20 @@ export default function App() {
         style={styles.tabbarItem}
       >
         {_renderIcon(routeName, selectedTab)}
+
+
+        <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
+            <View>
+              
+            </View>
+            <View>
+
+            </View>
+
+          </View>
+
+
+          
       </TouchableOpacity>
     );
   };

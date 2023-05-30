@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { StyleSheet, View, ScrollView, Pressable } from 'react-native';
+import { StyleSheet, View, ScrollView, Pressable , Dimensions} from 'react-native';
 import PhoneInput from '../../components/input/PhoneInput'
 import Input from '../../components/input'
 import { InputSecureText } from '../../components/input/InputSecureText'
@@ -12,6 +12,18 @@ import GoBack from '../../assets/js/Goback'
 import UncheckedRadio from '../../assets/js/SquareUncheckedRadioBTN'
 import CheckedRadio from '../../assets/js/SquareCheckedRadioBTN'
 import FingerPrintIcon from '../../assets/js/FingerPrint'
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart
+} from "react-native-chart-kit";
+import IconFeather from 'react-native-vector-icons/Feather'
+import IconEntypo from 'react-native-vector-icons/Entypo'
+
+
 
 export default function App({navigation}) {
 
@@ -20,20 +32,81 @@ export default function App({navigation}) {
   const [inputError, setInputError] = useState({email:'', password:'', password_confirmation:'',f_name:'', l_name:'', phone_number:'', activePickerValidation:'', address:''})
 
   return (
-    <GlassBoardLayout style={{container:{paddingLeft:'5%', paddingRight:'5%'}}} navigation={navigation}>
+    <GlassBoardLayout  bgColor="#F8F8FA" style={{container:{paddingLeft:'5%', paddingRight:'5%'}}} navigation={navigation}>
     <ScrollView showsVerticalScrollIndicator={false} keyboardShouldPersistTaps='handled' >
 
     <View style={{marginTop:23,flexDirection:'row', alignItems:'center'}}>
         <Pressable
           hitSlop={27}
-          // onPress={() => navigation.goBack()}
+          onPress={() => navigation.goBack()}
         >
           <GoBack />
         </Pressable>
 
-        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:16, lineHeight:30, fontWeight:'400', marginLeft:33}}>Transactions</Text>
+        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:16, lineHeight:30, fontWeight:'400', marginLeft:33}}>Transactions hh</Text>
 
       </View>
+
+
+
+      <View style={{marginTop:22, width:'100%', backgroundColor:'#FFFFFF', borderRadius:10, padding:10}}>
+      <View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center'}}>
+       <View>
+       <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:30, fontWeight:'400',}}>Total balance</Text>
+        <View style={{flexDirection:'row', alignItems:'center'}}>
+        <Text family="proximaNovaSemiBold"  style={{color:"#000000", fontSize:25, lineHeight:30, fontWeight:'400',marginTop:5, marginRight:20}}>₦8,364.35</Text>
+        <IconFeather name={'eye'} size={21} color={"#000000"} />
+
+        </View>
+
+       </View>
+       
+        <View style={{flexDirection:'row', alignItems:'center'}}>
+        {/* <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:30, fontWeight:'400',}}>Transaction History</Text> */}
+        <IconEntypo name={'dots-three-vertical'} size={20} color={"#000000"} />
+
+        </View>
+
+
+        </View>
+  <LineChart
+        data={{
+          labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+          datasets: [
+            {
+              data: [20, 45, 28, 80, 99, 43],
+              strokeWidth: 2,
+            },
+          ],
+        }}
+        width={Dimensions.get('window').width /1.18}
+        height={267}
+        withDots={true}
+        withShadow={false}
+        withOuterLines={false}
+        withHorizontalLabels={true}
+        chartConfig={{
+          backgroundColor: '#B2B2B2',
+          // backgroundGradientFrom: '#eff3ff',
+          // backgroundGradientTo: '#ffffff',
+          backgroundGradientFrom: '#eff3ff',
+          backgroundGradientTo: '#efefef',
+          decimalPlaces: 2,
+          color: (opacity = 1) => `#3F37C9`,
+      labelColor: (opacity = 1) => `#B2B2B2`,
+
+          style: {
+            // borderRadius: 16,
+          },
+        }}
+        style={{
+          marginVertical: 8,
+          // borderRadius: 16,
+        }}
+      />
+</View>
+
+
     
 
 

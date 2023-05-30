@@ -16,7 +16,7 @@ export const InputText = ({ style = {}, label, leftIconInputSpacing=45, leftIcon
 
   style = style ?? {}
   return (
-    <View style={{height:72, position:'relative'}}>
+    <View style={{height:72, position:'relative' }}>
           {label && (
              <View style={[{...styles.labelBackground}, style.labelBackground]} >
              {label && <Text style={[{...styles.label,}, style.label, style.labelFocus]}>{label ?? null}</Text>}
@@ -124,10 +124,5 @@ const styles = StyleSheet.create({
   inputFenceFocus: {
     // borderWidth: 1.5,
   },
-  marginRight: {
-    // alignSelf:'center',
-
-    // paddingTop:'5%',
-    marginRight: '5%'
-  },
+ 
 })
