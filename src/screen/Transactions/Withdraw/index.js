@@ -149,7 +149,7 @@ React.useLayoutEffect(() => {
 
     
 
-
+      <View style={{marginTop:30}}></View>
       </ScrollView>
 
        </GlassBoardLayout> 

@@ -37,7 +37,8 @@ export default function App() {
   }
   return (
     <>
-      {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />}
+      {/* {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />} */}
+      <StatusBar barStyle="dark-content" />
       <StoreProvider>
         <ThemeProvider>
         <AppContainer />
