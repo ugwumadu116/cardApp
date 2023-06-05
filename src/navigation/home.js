@@ -153,21 +153,25 @@ export default function App() {
         <CurvedBottomBarExpo.Screen
           name="Accounts"
           position="LEFT"
-          component={AccountStack}
+          component={(props) => <AccountStack bottomBarRef={ref} {...props} />}
+
         />
         <CurvedBottomBarExpo.Screen
           name="Transactions"
           position="LEFT"
-          component={TransactionStack}
+          component={(props) => <TransactionStack bottomBarRef={ref} {...props} />}
+
         />
         <CurvedBottomBarExpo.Screen
           name="Cards"
-          component={CardStack}
+          component={(props) => <CardStack bottomBarRef={ref} {...props} />}
+
           position="RIGHT"
         />
         <CurvedBottomBarExpo.Screen
           name="Settings"
-          component={SettingsStack}
+          component={(props) => <SettingsStack bottomBarRef={ref} {...props} />}
+
           position="RIGHT"
         />
       </CurvedBottomBarExpo.Navigator>

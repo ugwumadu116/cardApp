@@ -209,7 +209,7 @@ style={{leftStyle:{}, rightStyle:{}, inputFenceFocus:{}}}
                     <Button 
                         title="Next"
                         family="proximaNovaRegular"
-                        style={{backgroundColor: false?'#3F37C9':"rgba(63, 55, 201, 0.5)",  borderColor:false?'#3F37C9':"rgba(63, 55, 201, 0.5)", borderWidth:1, width:"100%", height:56, justifyContent:'center', alignItems:'center', }}
+                        style={{backgroundColor: true?'#3F37C9':"rgba(63, 55, 201, 0.5)",  borderColor:true?'#3F37C9':"rgba(63, 55, 201, 0.5)", borderWidth:1, width:"100%", height:56, justifyContent:'center', alignItems:'center', }}
                         textStyle={{fontSize: 16, fontWeight: '400',  color:"#FFFFFF", lineHeight:20, textAlign:'center'}}
                         onPress={() => {
                           navigation.navigate('ConfirmTransfer')

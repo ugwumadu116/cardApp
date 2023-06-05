@@ -69,16 +69,13 @@ export const InputSecureText = ({ style = {}, label, secureTextEntry, preInput =
 const styles = StyleSheet.create({
   inputFence: {
     flexDirection: 'column',
-    // marginLeft: '8%',
-    // marginRight: '8%',
+  
     justifyContent: 'space-around',
     // alignItems:'center',
     borderWidth: 1,
     borderRadius: 10,
     borderColor:'#3F37C9',
-    // maxHeight: 102,
-    // minHeight: 72,
-    // height: 72,
+   
     height: '100%',
     // paddingTop: 20,
     paddingTop: '1%'

@@ -50,7 +50,16 @@ export default function App(props) {
   
 <View style={{height:Dimensions.get("window").height, }}>
 
-    <TouchableOpacity style={{
+    <TouchableOpacity
+      onPress={() => {
+        navigation.setParams({ goBack: "home" })
+        navigation.navigate('CustomerService')
+        
+     
+    }}
+    
+    
+     style={{
         overflow: Platform.OS === "ios" ? "visible" : "hidden",
         zIndex: 2,
         alignItems: "center",
@@ -89,9 +98,9 @@ export default function App(props) {
                   </Pressable>
                   
                   <View style={{marginLeft:16}}>
-                    <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:13, fontWeight:'400',}}>Hi, Cajethan</Text>
+                    <Text family="proximaNovaSemiBold"  style={{color:"#000000", fontSize:14, lineHeight:13, fontWeight:'400',}}>Hi, Cajethan</Text>
                     <View style={{flexDirection:'row', alignItems:'center', marginTop:10}}>
-                    <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:13, fontWeight:'400',marginRight:8}}>$3P3ERT</Text>
+                    <Text family="proximaNovaLight"  style={{color:"#000000", fontSize:14, lineHeight:13, fontWeight:'400',marginRight:8}}>$3P3ERT</Text>
                     <CopyIcon />
 
                     </View>
@@ -185,22 +194,38 @@ export default function App(props) {
 
       <View style={{marginTop:9, backgroundColor:'#FFFFFF', borderRadius:15, paddingHorizontal:18, paddingVertical:22}}>
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
-          <TouchableOpacity>
+          <TouchableOpacity 
+          onPress={() => {
+            navigation.navigate('Airtime')
+          }}
+           style={{width:58, alignItems:'center', justifyContent:'center'}}>
           <Airtime />
             
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Data')
+            }}
+           style={{width:58, alignItems:'center', justifyContent:'center'}}>
           <Data />
             
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity
+           onPress={() => {
+            navigation.navigate('Betting')
+          }}
+           style={{width:58, alignItems:'center', justifyContent:'center'}}>
           <Betting />
             
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity 
+           onPress={() => {
+            navigation.navigate('CableTv')
+          }}
+          style={{width:58, alignItems:'center', justifyContent:'center'}}>
           <CableTv />
             
           </TouchableOpacity>
@@ -209,19 +234,38 @@ export default function App(props) {
           
         </View>
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between', marginTop:26}}>
-        <TouchableOpacity>
+        <TouchableOpacity
+         onPress={() => {
+          navigation.navigate('VirtualCard')
+        }}
+         style={{width:58, alignItems:'center', justifyContent:'center'}}>
         <VirtualCards />
     
           </TouchableOpacity>
-        <TouchableOpacity>
+
+        <TouchableOpacity
+         onPress={() => {
+          navigation.navigate('GiftCards')
+        }}
+         style={{width:58, alignItems:'center', justifyContent:'center'}}>
         <GiftCards />
     
           </TouchableOpacity>
-        <TouchableOpacity>
+
+        <TouchableOpacity
+         onPress={() => {
+          navigation.navigate('Bills')
+        }}
+         style={{width:58, alignItems:'center', justifyContent:'center'}}>
         <Bills />
     
           </TouchableOpacity>
-        <TouchableOpacity>
+
+        <TouchableOpacity 
+         onPress={() => {
+          navigation.navigate('More')
+        }}
+         style={{width:58, alignItems:'center', justifyContent:'center'}}>
         <MoreIcon />
     
           </TouchableOpacity>
@@ -231,7 +275,14 @@ export default function App(props) {
       </View>
 
 
-      <View style={{marginTop:14, backgroundColor:'#FFFFFF', borderRadius:15, justifyContent:'center', padding:12}}>
+      <Pressable
+       onPress={() => {
+
+        navigation.setParams({ goBack: "home" })
+        navigation.navigate('Refer')
+     
+    }}
+       style={{marginTop:14, backgroundColor:'#FFFFFF', borderRadius:15, justifyContent:'center', padding:12}}>
      <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
         <View style={{flexDirection:'row', alignItems:'center',}}>
         <GiftCircleBox />
@@ -251,7 +302,7 @@ export default function App(props) {
         </View>
           
 
-      </View>
+      </Pressable>
 
       <View style={{marginTop:11, backgroundColor:'#FFC300', borderRadius:15, justifyContent:'center', padding:12}}>
      <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>

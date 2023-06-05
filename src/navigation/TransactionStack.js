@@ -5,13 +5,15 @@ import TransactionsScreen from '../screen/Transactions'
 
 const TransactionStack = createStackNavigator()
 
-export default function App() {
+export default function App(props) {
   return (
     <TransactionStack.Navigator  
       screenOptions={{
         headerShown: false
       }}>
-      <TransactionStack.Screen  name="Transaction" component={TransactionsScreen} />
+      <TransactionStack.Screen  name="Transaction"
+       children={()=><TransactionsScreen {...props}/>}
+        />
      
     </TransactionStack.Navigator>
   )
