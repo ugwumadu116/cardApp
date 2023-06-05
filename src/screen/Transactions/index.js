@@ -9,9 +9,9 @@ import {GlassBoardLayout} from  '../../components/layouts/GlassBoardLayout'
 import Button from '../../components/button'
 import Icon from 'react-native-vector-icons/AntDesign'
 import GoBack from '../../assets/js/Goback'
-import UncheckedRadio from '../../assets/js/SquareUncheckedRadioBTN'
-import CheckedRadio from '../../assets/js/SquareCheckedRadioBTN'
-import FingerPrintIcon from '../../assets/js/FingerPrint'
+import TuneIcon from '../../assets/js/Tune'
+import TransactionDeposite from '../../assets/js/transactionDeposite'
+import TransactionWithdraw from '../../assets/js/transactionWithdraw'
 import {
   LineChart,
   BarChart,
@@ -43,14 +43,14 @@ export default function App({navigation}) {
           <GoBack />
         </Pressable>
 
-        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:16, lineHeight:30, fontWeight:'400', marginLeft:33}}>Transactions hh</Text>
+        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:16, lineHeight:30, fontWeight:'400', marginLeft:25}}>Transactions</Text>
 
       </View>
 
 
 
-      <View style={{marginTop:22, width:'100%', backgroundColor:'#FFFFFF', borderRadius:10, padding:10}}>
-      <View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center'}}>
+      <View style={{marginTop:22, width:'100%', backgroundColor:'#FFFFFF', borderRadius:10, padding:0}}>
+      <View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', padding:10, marginBottom:10}}>
        <View>
        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:30, fontWeight:'400',}}>Total balance</Text>
         <View style={{flexDirection:'row', alignItems:'center'}}>
@@ -75,7 +75,7 @@ export default function App({navigation}) {
           datasets: [
             {
               data: [20, 45, 28, 80, 99, 43],
-              strokeWidth: 2,
+              strokeWidth: 3,
             },
           ],
         }}
@@ -85,26 +85,110 @@ export default function App({navigation}) {
         withShadow={false}
         withOuterLines={false}
         withHorizontalLabels={true}
+        withVerticalLabels={true}
         chartConfig={{
-          backgroundColor: '#B2B2B2',
+          backgroundGradientFrom: '#ffffff',
+          backgroundGradientTo: '#ffffff',
+          
           // backgroundGradientFrom: '#eff3ff',
-          // backgroundGradientTo: '#ffffff',
-          backgroundGradientFrom: '#eff3ff',
-          backgroundGradientTo: '#efefef',
+          // backgroundGradientTo: '#efefef',
           decimalPlaces: 2,
           color: (opacity = 1) => `#3F37C9`,
       labelColor: (opacity = 1) => `#B2B2B2`,
 
           style: {
             // borderRadius: 16,
+          padding:0,
+
           },
         }}
         style={{
-          marginVertical: 8,
+          marginVertical: 0,
+          // backgroundColor: 'red',
+
           // borderRadius: 16,
         }}
       />
 </View>
+
+<View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:17}}>
+       <View>
+       <Text family="proximaNovaSemiBold"  style={{color:"#000000", fontSize:16, lineHeight:30, fontWeight:'400',}}>Recent Transactions</Text>
+       
+
+       </View>
+       
+        <View style={{flexDirection:'row', alignItems:'center'}}>
+          <TuneIcon style={{marginRight:27}}/>
+        <IconFeather name={'search'} size={21} color={"#000000"} />
+
+
+        </View>
+
+
+        </View>
+
+<View  style={{marginTop:10,}}/>
+
+        <View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
+       <View style={{flexDirection:'row', alignItems:'center'}}>
+        <TransactionWithdraw />
+        <View style={{marginLeft:8}}>
+        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:20,  fontWeight:'400',}}>TNF-CHRISTOPHER, HARRY VICTOR/CASH</Text>
+        <Text family="proximaNovaLight"  style={{color:"#000000", fontSize:14,lineHeight:20,   fontWeight:'400',}}>04/11/2022</Text>
+
+        </View>
+
+       </View>
+       
+        <View style={{}}>
+        <Text family="proximaNovaRegular"  style={{color:"#F60A0B", fontSize:14, lineHeight:20,   fontWeight:'400',}}>-₦2,100.00</Text>
+        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:20,   fontWeight:'400',}}>N1,460.27</Text>
+
+        </View>
+
+
+        </View>
+
+        <View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
+       <View style={{flexDirection:'row', alignItems:'center'}}>
+        <TransactionDeposite />
+        <View style={{marginLeft:8}}>
+        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:20,  fontWeight:'400',}}>TNF-CHRISTOPHER, HARRY VICTOR/CASH</Text>
+        <Text family="proximaNovaLight"  style={{color:"#000000", fontSize:14,lineHeight:20,   fontWeight:'400',}}>04/11/2022</Text>
+
+        </View>
+
+       </View>
+       
+        <View style={{}}>
+        <Text family="proximaNovaRegular"  style={{color:"#3F37C9", fontSize:14, lineHeight:20,   fontWeight:'400',}}>-₦2,100.00</Text>
+        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:20,   fontWeight:'400',}}>N1,460.27</Text>
+
+        </View>
+
+
+        </View>
+
+        <View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
+       <View style={{flexDirection:'row', alignItems:'center'}}>
+        <TransactionWithdraw />
+        <View style={{marginLeft:8}}>
+        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:20,  fontWeight:'400',}}>TNF-CHRISTOPHER, HARRY VICTOR/CASH</Text>
+        <Text family="proximaNovaLight"  style={{color:"#000000", fontSize:14,lineHeight:20,   fontWeight:'400',}}>04/11/2022</Text>
+
+        </View>
+
+       </View>
+       
+        <View style={{}}>
+        <Text family="proximaNovaRegular"  style={{color:"#F60A0B", fontSize:14, lineHeight:20,   fontWeight:'400',}}>-₦2,100.00</Text>
+        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:20,   fontWeight:'400',}}>N1,460.27</Text>
+
+        </View>
+
+
+        </View>
 
 
     

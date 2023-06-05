@@ -88,10 +88,10 @@ export default function App(props) {
 
 <TextInput
             secureTextEntry={false}
-    style={{backgroundColor: "#FFFFFF",    fontFamily: 'proximaNovaRegular', fontSize: 14,  width:"80%", height:72, borderRadius:10,marginRight:8, paddingHorizontal:20, }}
+    style={{backgroundColor: "#FFFFFF",    fontFamily: 'proximaNovaRegular', fontSize: 14,  width:"80%", height:59, borderRadius:10,marginRight:8, paddingHorizontal:20, }}
             autoCapitalize='none'
             placeholder={"Search"}
-            placeholderTextColor={"#000000"} 
+            placeholderTextColor={"#B2B2B2"} 
           
 
           />
@@ -100,8 +100,8 @@ export default function App(props) {
               borderColor: "#3F37C9",
               borderWidth: 1,
               borderRadius:10,
-              width: 58,
-              height:72,
+              width: 59,
+              height:59,
               justifyContent: "center",
               alignItems: "center",
             }}>

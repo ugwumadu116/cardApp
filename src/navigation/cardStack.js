@@ -5,13 +5,15 @@ import WalletsScreen from '../screen/Wallets'
 
 const WalletsStack = createStackNavigator()
 
-export default function App() {
+export default function App(props) {
   return (
     <WalletsStack.Navigator  
       screenOptions={{
         headerShown: false
       }}>
-      <WalletsStack.Screen  name="card" component={WalletsScreen} />
+      <WalletsStack.Screen  name="Card" 
+       children={()=><WalletsScreen {...props}/>}
+       />
      
     </WalletsStack.Navigator>
   )

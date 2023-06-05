@@ -15,7 +15,9 @@ export default function App(props) {
         headerShown: false
       }}>
       {/* <AccountStack.Screen {...props}  name="home" component={HomeStack} />      */}
-      <AccountStack.Screen {...props}  name="Account" component={AccountsScreen} />     
+      <AccountStack.Screen name="Account" 
+      children={()=><AccountsScreen {...props}/>}
+      />     
     </AccountStack.Navigator>
   )
 }
