@@ -489,7 +489,11 @@ export default function App(props) {
         </Pressable>
 
    
+        <View  style={{marginTop:120}}/>
+      <View  style={{marginTop:30}}/>
 
+      
+          
       </ScrollView>
     </GlassBoardLayout>
   );
