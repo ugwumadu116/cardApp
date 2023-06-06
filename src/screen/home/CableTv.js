@@ -462,6 +462,7 @@ Kwese TV
      
         </View>
     
+        <View  style={{marginTop:30}}/>
 
       </ScrollView>
     </GlassBoardLayout>

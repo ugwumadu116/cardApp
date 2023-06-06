@@ -345,6 +345,7 @@ Add more
 
 </View>
     
+<View  style={{marginTop:30}}/>
     
 
       </ScrollView>

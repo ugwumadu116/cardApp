@@ -167,7 +167,7 @@ style={{leftStyle:{}, rightStyle:{}, inputFenceFocus:{}}}
 
     
 
-
+                   <View style={{marginTop:30}}></View>
       </ScrollView>
 
        </GlassBoardLayout> 

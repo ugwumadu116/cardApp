@@ -265,6 +265,8 @@ export default function App({ navigation }) {
             </TouchableOpacity>
           </View>
         </View>
+
+        <View style={{marginTop:30}}></View>
       </ScrollView>
     </GlassBoardLayout>
   );

@@ -145,6 +145,7 @@ export default function App(props) {
         </View>
 
 
+        <View  style={{marginTop:30}}/>
  
 
       </ScrollView>

@@ -191,8 +191,11 @@ export default function App({navigation}) {
         </View>
 
 
-    
+        <View  style={{marginTop:120}}/>
+      <View  style={{marginTop:30}}/>
 
+      
+          
 
       </ScrollView>
 

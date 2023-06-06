@@ -381,7 +381,7 @@ export default function App({navigation}) {
 
           </View>
 
-
+          <View style={{marginTop:30}}></View>
         </ScrollView>
 
         </GlassBoardLayout>
