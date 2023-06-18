@@ -13,8 +13,15 @@ import Button from "../../components/button";
 import GoBack from "../../assets/js/Goback";
 import MessageSent from "../../assets/js/MessageSent";
 import PinInput from "../../components/input/PinInput";
+import { registeredBoundActionCreator } from '../../store/app/action'
+import { useStoreContext } from '../../store'
 
 export default function App({ navigation }) {
+  const {
+    dispatch,
+    store: { activeApp },
+  } = useStoreContext()
+
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -209,8 +216,8 @@ export default function App({ navigation }) {
               title="Continue"
               family="proximaNovaRegular"
               style={{
-                backgroundColor: false ? "#3F37C9" : "rgba(63, 55, 201, 0.5)",
-                borderColor: false ? "#3F37C9" : "rgba(63, 55, 201, 0.5)",
+                backgroundColor: true ? "#3F37C9" : "rgba(63, 55, 201, 0.5)",
+                borderColor: true ? "#3F37C9" : "rgba(63, 55, 201, 0.5)",
                 borderWidth: 1,
                 width: "100%",
                 height: 56,
@@ -225,7 +232,9 @@ export default function App({ navigation }) {
                 textAlign: "center",
               }}
               onPress={() => {
-                navigation.navigate('ResetPassword')
+                // navigation.navigate('ResetPassword')
+      registeredBoundActionCreator(dispatch)
+
               }}
             />
           </View>

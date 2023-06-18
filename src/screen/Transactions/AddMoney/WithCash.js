@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { StyleSheet, View, ScrollView, Pressable, TouchableOpacity, ImageBackground } from 'react-native';
+import { StyleSheet, View, ScrollView, Pressable, TouchableOpacity, Dimensions, ImageBackground } from 'react-native';
 import PhoneInput from '../../../components/input/PhoneInput'
 import Input from '../../../components/input'
 import { InputSecureText } from '../../../components/input/InputSecureText'
@@ -71,17 +71,33 @@ React.useLayoutEffect(() => {
               // resizeMode: "cover",
             }}
           
-             imageStyle={{borderRadius:16,    }}
+             imageStyle={{borderRadius:16, 
+              // width: Math.round(Dimensions.get("window").width),
+    // height: Math.round(Dimensions.get("window").height), 
+    // resizeMode: "contain",
+
+              }}
           source={CasdDepositInfoImg}
         >
-        <Text family="proximaNovaSemiBold"  style={{color:"#000000", fontSize:14, lineHeight:15, fontWeight:'400', marginTop:30}}>How to make a Cash Deposit</Text>
-        <Text family="proximaNovaSemiBold"  style={{color:"#000000", fontSize:14, lineHeight:15, fontWeight:'400', marginTop:33}}>Give Cash to the POS Merchant</Text>
-        <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:15, fontWeight:'400', marginTop:10, textAlign:'center'}}>Give cash to the POS merchant and ask for the funds to be transferred to your Cardin Africa Account <Text family="proximaNovaRegular"  style={{color:"#3F37C9", fontSize:14, lineHeight:15, fontWeight:'400',}}>210 336 0432 </Text></Text>
+        <Text family="proximaNovaSemiBold"  style={{color:"#000000", fontSize:14, lineHeight:15, fontWeight:'400', marginTop:"10%"}}>How to make a Cash Deposit</Text>
+        <Text family="proximaNovaSemiBold"  style={{color:"#000000", fontSize:14, lineHeight:15, fontWeight:'400', marginTop:"7%"}}>Give Cash to the POS Merchant</Text>
+        <Text family="proximaNovaRegular"  style={{color:"#000000",
+         fontSize:14, lineHeight:15,
+          paddingHorizontal:"10%",
+        //  marginHorizontal:"10%",
+         
+          fontWeight:'400', marginTop:10, textAlign:'center',
+      }}>Give cash to the POS merchant and ask for the funds to be transferred to your Cardin Africa Account <Text family="proximaNovaRegular"  style={{color:"#3F37C9", fontSize:14, lineHeight:15, fontWeight:'400',}}>210 336 0432 </Text></Text>
        
      
-        <Text family="proximaNovaSemiBold"  style={{color:"#000000", fontSize:14, lineHeight:15, fontWeight:'400', marginTop:73}}>Confirm Receipt of Funds</Text>
+        <Text family="proximaNovaSemiBold"  style={{color:"#000000", fontSize:14, lineHeight:15, fontWeight:'400', marginTop:"18%"}}>Confirm Receipt of Funds</Text>
 
-<Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:15, fontWeight:'400', marginTop:10, textAlign:'center'}}>Confirm your Cardin Africa Account has been funded with the correct amount</Text>
+<Text family="proximaNovaRegular"  style={{color:"#000000", 
+fontSize:14, lineHeight:15,
+paddingHorizontal:"10%",
+// marginHorizontal:"10%",
+
+ fontWeight:'400', marginTop:10, textAlign:'center'}}>Confirm your Cardin Africa Account has been funded with the correct amount</Text>
 
 
 

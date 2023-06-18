@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { StyleSheet, View, ScrollView, Pressable, ImageBackground } from 'react-native';
+import { StyleSheet, View, ScrollView, Pressable, ImageBackground, TouchableOpacity, Dimensions } from 'react-native';
 import PhoneInput from '../../components/input/PhoneInput'
 import Input from '../../components/input'
 import { InputSecureText } from '../../components/input/InputSecureText'
@@ -15,12 +15,15 @@ import NigeriaIcon from '../../assets/js/NigeriaIcon'
 import IconFeather from 'react-native-vector-icons/Feather'
 import PiggyBank from '../../assets/piggyBank.png'
 import GiftCircleBox from '../../assets/js/GiftCircleBox'
+import RBSheet from "react-native-raw-bottom-sheet";
 
 
 
 
 export default function App(props) {
   const {navigation} = props
+  const bottomSheetRef = useRef(null);
+
 
   React.useLayoutEffect(() => {
     props.bottomBarRef.current?.setVisible(true)
@@ -55,11 +58,18 @@ export default function App(props) {
         <View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center'}}>
         <Text family="proximaNovaRegular"  style={{color:"#FFFFFF", fontSize:14, lineHeight:30, fontWeight:'400',}}>Total balance</Text>
         
-        <View style={{flexDirection:'row', alignItems:'center'}}>
+        <TouchableOpacity 
+        onPress={() => {
+        navigation.setParams({ goBack: "Account" })
+
+          navigation.navigate('Transaction')
+        }}
+
+        style={{flexDirection:'row', alignItems:'center'}}>
         <Text family="proximaNovaRegular"  style={{color:"#FFFFFF", fontSize:14, lineHeight:30, fontWeight:'400',}}>Transaction History</Text>
         <IconFeather name={'chevron-right'} size={12} color={"#FFFFFF"} />
 
-        </View>
+        </TouchableOpacity>
 
        
 
@@ -87,11 +97,15 @@ export default function App(props) {
 
        </View>
        
-        <View style={{flexDirection:'row', alignItems:'center'}}>
+        <TouchableOpacity
+         onPress={() => {  
+            navigation.navigate('ExchangeRate')
+          }}
+         style={{flexDirection:'row', alignItems:'center'}}>
         <Text family="proximaNovaSemiBold"  style={{color:"#B2B2B2", fontSize:16, lineHeight:30, fontWeight:'400',}}>View all</Text>
        
 
-        </View>
+        </TouchableOpacity>
 
 
         </View>
@@ -116,7 +130,11 @@ export default function App(props) {
 
 
 
-      <View
+      <TouchableOpacity
+       onPress={() => {
+            
+              bottomSheetRef.current?.open();
+            }}
           style={{
             justifyContent: "space-between",
             flexDirection: "row",
@@ -161,7 +179,7 @@ export default function App(props) {
           <View style={{}}>
             <IconFeather name={"chevron-right"} size={22} color={"#BABABA"} />
           </View>
-        </View>
+        </TouchableOpacity>
 
       </View>
 
@@ -184,6 +202,11 @@ export default function App(props) {
               <Text family="proximaNovaSemiBold"  style={{color:"#FFFFFF", fontSize:14, lineHeight:20, fontWeight:'400',}}>Create your virtual USD {"\n"}Bank account</Text>
 
               <Pressable
+                 onPress={() => {
+                  
+                  navigation.navigate('RequestVirtualAccountOne')
+                }}
+             
                 style={{
                   borderRadius:5,
                   backgroundColor:'#FFFFFF',
@@ -209,7 +232,14 @@ export default function App(props) {
 
 
 
-   <View style={{marginTop:14, backgroundColor:'#FFFFFF', borderRadius:15, justifyContent:'center', padding:12}}>
+   <Pressable 
+    onPress={() => {
+
+      navigation.setParams({ goBack: "Account" })
+      navigation.navigate('Refer')
+   
+  }}
+   style={{marginTop:14, backgroundColor:'#FFFFFF', borderRadius:15, justifyContent:'center', padding:12}}>
      <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
         <View style={{flexDirection:'row', alignItems:'center',}}>
         <GiftCircleBox />
@@ -229,7 +259,7 @@ export default function App(props) {
         </View>
           
 
-      </View>
+   </Pressable>
 
 
       <View  style={{marginTop:120}}/>
@@ -238,6 +268,112 @@ export default function App(props) {
       
           
       </ScrollView>
+      <RBSheet
+        ref={bottomSheetRef}
+        height={Dimensions.get("window").height / 2.8}
+        animationType="fade"
+        customStyles={{
+          container: {
+            borderTopLeftRadius: 30,
+            borderTopRightRadius: 30,
+            backgroundColor: "#FFFFFF",
+          },
+        }}
+      >
+        <View
+          style={{
+            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent:'center',
+            marginTop: 33,
+            // borderWidth:1,
+          }}
+        >
+          <View
+            style={{ width: "100%",
+
+              alignItems: "center" }}
+          >
+            <Text
+              family="proximaNovaSemiBold"
+              style={{
+                color: "#000000",
+                lineHeight: 20,
+                fontSize: 14,
+                fontWeight: "800",
+              }}
+            >
+              Topup Rate
+            </Text>
+
+          </View>
+
+          <View
+            style={{ width: "100%", marginTop: "12%",marginBottom:"10%", alignItems: "center", flexDirection:'row', justifyContent:'space-evenly' }}
+          >
+            <Text
+              family="proximaNovaSemiBold"
+              style={{
+                color: "#000000",
+                lineHeight: 27,
+                fontSize: 20,
+                fontWeight: "800",
+              }}
+            >
+              $1.00
+            </Text>
+
+          
+
+            <Text
+              family="proximaNovaRegular"
+              style={{
+                color: "#B2B2B2",
+                lineHeight: 21,
+                fontSize: 14,
+                fontWeight: "800",
+              }}
+            >
+             TO
+            </Text>
+            <Text
+              family="proximaNovaSemiBold"
+              style={{
+                color: "#000000",
+                lineHeight: 27,
+                fontSize: 20,
+                fontWeight: "800",
+              }}
+            >
+              N733.00
+            </Text>
+          </View>
+
+          <View
+            style={{ width: "100%",  alignItems: "center", borderTopColor:'#B2B2B2', borderTopWidth:1 }}
+          >
+            <Text
+              family="proximaNovaRegular"
+              style={{
+                color: "#B2B2B2",
+                lineHeight: 18,
+                fontSize: 12,
+                fontWeight: "800",
+                textAlign:'center',
+                paddingHorizontal:17,
+                marginTop:15,
+              }}
+            >
+              The exchange rate is subject to change based  on current {"\n"}
+market condition & trends
+            </Text>
+
+          </View>
+
+
+        </View>
+      </RBSheet>
 
        </GlassBoardLayout> 
   );

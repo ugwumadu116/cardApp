@@ -21,12 +21,11 @@ import FaceID from "../../assets/js/FaceID";
 import CopyIcon from "../../assets/js/CopyIcon";
 
 export default function App(props) {
-    const {navigation} = props
+  const {navigation} = props
+  React.useLayoutEffect(() => {
+    props.bottomBarRef.current?.setVisible(false)
+  }, [props])
 
-    React.useLayoutEffect(() => {
-        props.bottomBarRef.current?.setVisible(false)
-    
-      }, [props])
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -64,7 +63,8 @@ export default function App(props) {
         >
           <Pressable
             hitSlop={27}
-            onPress={() => navigation.goBack()}
+            onPress={() => navigation.navigate("ManageCards")}
+
           >
             <GoBack />
           </Pressable>
@@ -79,12 +79,62 @@ export default function App(props) {
               marginLeft: 25,
             }}
           >
-            Gift Cards
+            Change Pin
           </Text>
         </View>
 
-    
-        <View  style={{marginTop:30}}/>
+        <View style={{width:'100%', marginTop:37}}>
+         <InputSecureText
+                  label={'Current Password'}
+                  placeholder={''}
+                  returnInput={(value) => {
+                  // console.log(value);
+                  }}
+                />
+     </View>
+     
+        <View style={{width:'100%', marginTop:40}}>
+         <InputSecureText
+                  label={'Current Pin'}
+                  placeholder={''}
+                  returnInput={(value) => {
+                  // console.log(value);
+                  }}
+                />
+     </View>
+
+        <View style={{width:'100%', marginTop:40}}>
+         <InputSecureText
+                  label={'New Pin'}
+                  placeholder={''}
+                  returnInput={(value) => {
+                  // console.log(value);
+                  }}
+                />
+     </View>
+
+        <View style={{width:'100%', marginTop:80}}>
+      
+
+<Button 
+                        title="Change Pin"
+                        family="proximaNovaRegular"
+                        style={{backgroundColor: '#3F37C9',  borderColor:"#3F37C9", borderWidth:1, width:"100%", height:56, justifyContent:'center', alignItems:'center', }}
+                        textStyle={{fontSize: 16, fontWeight: '400',  color:"#FFFFFF", lineHeight:20, textAlign:'center'}}
+                        onPress={() => {
+                          // navigation.navigate('Signup')
+
+                          navigation.navigate("Setting")
+
+                      }}
+                    />
+     </View>
+
+     
+
+
+     <View  style={{marginTop:30}}/>
+
 
       </ScrollView>
     </GlassBoardLayout>

@@ -7,16 +7,34 @@ import BillsScreen from '../screen/home/Bills'
 import SchoolScreen from '../screen/home/SchoolScreen'
 import CableTvScreen from '../screen/home/CableTv'
 import DataScreen from '../screen/home/Data'
-import GiftCardsScreen from '../screen/home/GiftCards'
+import GiftCardsScreen from '../screen/home/Gifts/GiftCards'
+import SelectedCardScreen from '../screen/home/Gifts/SelectedCard'
+import SellGiftCardScreen from '../screen/home/Gifts/SellGiftCard'
+import SearchGiftCardScreen from '../screen/home/Gifts/SearchGiftCard'
+import GiftCardTypeScreen from '../screen/home/Gifts/CardType'
+import GiftCardCategoryScreen from '../screen/home/Gifts/GiftCardCategory'
+import GiftCardHowMuchScreen from '../screen/home/Gifts/HowMuch'
+import SuccessGiftCardScreen from '../screen/home/Gifts/SuccessGiftCard'
 import MoreScreen from '../screen/home/More'
+
 import VirtualCardScreen from '../screen/home/VirtualCard'
 import CreateVirtualCardScreen from '../screen/home/CreateVirtualCard'
+import RequestVirtualCardScreen from '../screen/home/RequestVirtualCard'
+import AccountSuccessScreen from '../screen/Accounts/AccountSuccess'
 
 import TransferScreen from '../screen/Transactions/Transfer'
 import TransferToCardinScreen from '../screen/Transactions/Transfer/TransferToCardin'
 import TransferToBankScreen from '../screen/Transactions/Transfer/TransferToBank'
 import ConfirmTransferScreen from '../screen/Transactions/Transfer/ConfirmTransfer'
 import TransferReceiptScreen from '../screen/Transactions/Transfer/TransferReceipt'
+
+import PaymentCheckoutScreen from '../screen/Transactions/PaymentCheckout'
+import PaymentSuccessScreen from '../screen/Transactions/PaymentSuccess'
+import BettingBillsCheckoutScreen from '../screen/Transactions/BettingBillsCheckout'
+import CableTvBillsCheckoutScreen from '../screen/Transactions/CableTvBillsCheckout'
+import BillsCheckoutScreen from '../screen/Transactions/BillsCheckout'
+import SchoolBillsCheckoutScreen from '../screen/Transactions/SchoolBillsCheckout'
+import BillsRecieptScreen from '../screen/Transactions/BillsReciept'
 
 import AddMoneyScreen from '../screen/Transactions/AddMoney'
 import AddMoneyWithCardScreen from '../screen/Transactions/AddMoney/WithCard'
@@ -56,16 +74,33 @@ export default function App(props) {
       <HomeStack.Screen  name="Schools"  children={()=><SchoolScreen {...props}/>} />
       <HomeStack.Screen  name="CableTv"  children={()=><CableTvScreen {...props}/>} />
       <HomeStack.Screen  name="Data"  children={()=><DataScreen {...props}/>} />
-      <HomeStack.Screen  name="GiftCards"  children={()=><GiftCardsScreen {...props}/>} />
+      <HomeStack.Screen  name="BuyGiftCards"  children={()=><GiftCardsScreen {...props}/>} />
+      <HomeStack.Screen  name="SellGiftCard"  children={()=><SellGiftCardScreen {...props}/>} />
+      <HomeStack.Screen  name="SelectedCard"  children={()=><SelectedCardScreen {...props}/>} />
+      <HomeStack.Screen  name="SearchGiftCard"  children={()=><SearchGiftCardScreen {...props}/>} />
+      <HomeStack.Screen  name="GiftCardType"  children={()=><GiftCardTypeScreen {...props}/>} />
+      <HomeStack.Screen  name="GiftCardCategory"  children={()=><GiftCardCategoryScreen {...props}/>} />
+      <HomeStack.Screen  name="GiftCardHowMuch"  children={()=><GiftCardHowMuchScreen {...props}/>} />
+      <HomeStack.Screen  name="SuccessGiftCard"  children={()=><SuccessGiftCardScreen {...props}/>} />
       <HomeStack.Screen  name="More"  children={()=><MoreScreen {...props}/>} />
       <HomeStack.Screen  name="VirtualCard"  children={()=><VirtualCardScreen {...props}/>} />
       <HomeStack.Screen  name="CreateVirtualCard"  children={()=><CreateVirtualCardScreen {...props}/>} />
+      <HomeStack.Screen  name="RequestVirtualCard"  children={()=><RequestVirtualCardScreen {...props}/>} />
+      <HomeStack.Screen  name="AccountSuccess"  children={()=><AccountSuccessScreen {...props}/>} />
 
       <HomeStack.Screen  name="Transfer" children={() => <TransferScreen  {...props} /> } />
       <HomeStack.Screen  name="TransferToBank" children={() => <TransferToBankScreen  {...props} /> } />
       <HomeStack.Screen  name="TransferToCardin" children={() => <TransferToCardinScreen  {...props} /> } />
       <HomeStack.Screen  name="TransferReceipt" children={() => <TransferReceiptScreen  {...props} /> } />
       <HomeStack.Screen  name="ConfirmTransfer" children={() => <ConfirmTransferScreen  {...props} /> } />
+
+      <HomeStack.Screen  name="PaymentCheckout" children={() => <PaymentCheckoutScreen  {...props} /> } />
+      <HomeStack.Screen  name="PaymentSuccess" children={() => <PaymentSuccessScreen  {...props} /> } />
+      <HomeStack.Screen  name="BettingBillsCheckout" children={() => <BettingBillsCheckoutScreen  {...props} /> } />
+      <HomeStack.Screen  name="CableTvBillsCheckout" children={() => <CableTvBillsCheckoutScreen  {...props} /> } />
+      <HomeStack.Screen  name="BillsCheckout" children={() => <BillsCheckoutScreen  {...props} /> } />
+      <HomeStack.Screen  name="SchoolBillsCheckout" children={() => <SchoolBillsCheckoutScreen  {...props} /> } />
+      <HomeStack.Screen  name="BillsReciept" children={() => <BillsRecieptScreen  {...props} /> } />
 
       <HomeStack.Screen  name="AddMoney" children={() => <AddMoneyScreen  {...props} /> } />
       <HomeStack.Screen  name="AddMoneyWithCard" children={() => <AddMoneyWithCardScreen  {...props} /> } />

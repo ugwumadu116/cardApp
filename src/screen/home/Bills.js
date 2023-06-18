@@ -115,7 +115,9 @@ export default function App(props) {
 
 
         
-                <View
+       <TouchableOpacity
+        onPress={() => navigation.navigate('BillsCheckout')}
+
           style={{
             justifyContent: "space-between",
             flexDirection: "row",
@@ -141,10 +143,12 @@ export default function App(props) {
 
             <IconFeather name={"chevron-right"} size={24} color={"#BABABA"} />
      
-        </View>
+        </TouchableOpacity>
 
            
-        <View
+        <TouchableOpacity
+        onPress={() => navigation.navigate('BillsCheckout')}
+
           style={{
             justifyContent: "space-between",
             flexDirection: "row",
@@ -170,11 +174,13 @@ export default function App(props) {
 
             <IconFeather name={"chevron-right"} size={24} color={"#BABABA"} />
      
-        </View>
+        </TouchableOpacity>
 
 
            
-        <View
+        <TouchableOpacity
+        onPress={() => navigation.navigate('BillsCheckout')}
+
           style={{
             justifyContent: "space-between",
             flexDirection: "row",
@@ -200,11 +206,13 @@ export default function App(props) {
 
             <IconFeather name={"chevron-right"} size={24} color={"#BABABA"} />
      
-        </View>
+        </TouchableOpacity>
 
 
            
-        <View
+        <TouchableOpacity
+        onPress={() => navigation.navigate('BillsCheckout')}
+
           style={{
             justifyContent: "space-between",
             flexDirection: "row",
@@ -230,10 +238,12 @@ export default function App(props) {
 
             <IconFeather name={"chevron-right"} size={24} color={"#BABABA"} />
      
-        </View>
+        </TouchableOpacity>
 
            
-        <View
+        <TouchableOpacity
+        onPress={() => navigation.navigate('BillsCheckout')}
+
           style={{
             justifyContent: "space-between",
             flexDirection: "row",
@@ -259,10 +269,12 @@ export default function App(props) {
 
             <IconFeather name={"chevron-right"} size={24} color={"#BABABA"} />
      
-        </View>
+        </TouchableOpacity>
 
            
-        <View
+        <TouchableOpacity
+        onPress={() => navigation.navigate('BillsCheckout')}
+
           style={{
             justifyContent: "space-between",
             flexDirection: "row",
@@ -288,10 +300,12 @@ export default function App(props) {
 
             <IconFeather name={"chevron-right"} size={24} color={"#BABABA"} />
      
-        </View>
+        </TouchableOpacity>
 
            
-        <View
+        <TouchableOpacity
+        onPress={() => navigation.navigate('BillsCheckout')}
+
           style={{
             justifyContent: "space-between",
             flexDirection: "row",
@@ -317,10 +331,12 @@ export default function App(props) {
 
             <IconFeather name={"chevron-right"} size={24} color={"#BABABA"} />
      
-        </View>
+        </TouchableOpacity>
 
            
-        <View
+        <TouchableOpacity
+        onPress={() => navigation.navigate('BillsCheckout')}
+
           style={{
             justifyContent: "space-between",
             flexDirection: "row",
@@ -346,10 +362,12 @@ export default function App(props) {
 
             <IconFeather name={"chevron-right"} size={24} color={"#BABABA"} />
      
-        </View>
+        </TouchableOpacity>
 
 
-        <View
+        <TouchableOpacity
+        onPress={() => navigation.navigate('BillsCheckout')}
+
           style={{
             justifyContent: "space-between",
             flexDirection: "row",
@@ -376,9 +394,11 @@ export default function App(props) {
 
             <IconFeather name={"chevron-right"} size={24} color={"#BABABA"} />
      
-        </View>
+        </TouchableOpacity>
 
-        <View
+        <TouchableOpacity
+        onPress={() => navigation.navigate('BillsCheckout')}
+
           style={{
             justifyContent: "space-between",
             flexDirection: "row",
@@ -404,9 +424,11 @@ export default function App(props) {
 
             <IconFeather name={"chevron-right"} size={24} color={"#BABABA"} />
      
-        </View>
+        </TouchableOpacity>
 
-        <View
+        <TouchableOpacity
+        onPress={() => navigation.navigate('BillsCheckout')}
+
           style={{
             justifyContent: "space-between",
             flexDirection: "row",
@@ -432,7 +454,7 @@ export default function App(props) {
 
             <IconFeather name={"chevron-right"} size={24} color={"#BABABA"} />
      
-        </View>
+        </TouchableOpacity>
 
         <View  style={{marginTop:30}}/>
 

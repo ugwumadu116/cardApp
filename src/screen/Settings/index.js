@@ -21,7 +21,7 @@ import FaceID from "../../assets/js/FaceID";
 import CopyIcon from "../../assets/js/CopyIcon";
 import { authBoundActionCreator } from '../../store/app/action'
 import { useStoreContext } from '../../store'
-
+import * as StoreReview from 'expo-store-review';
 // import { logoutFulfilled } from '../../../store/investment/auth/action'
 
 
@@ -304,7 +304,7 @@ export default function App(props) {
         </Pressable>
 
 
-        <Pressable
+        {/* <Pressable
          onPress={() => {
           navigation.navigate('BankCardAccounts')
        
@@ -351,7 +351,7 @@ export default function App(props) {
           <View style={{}}>
             <IconFeather name={"chevron-right"} size={22} color={"#BABABA"} />
           </View>
-        </Pressable>
+        </Pressable> */}
 
 
         <Pressable
@@ -396,10 +396,17 @@ export default function App(props) {
 
 
         <Pressable
-          onPress={() => {
-            navigation.navigate('RateUs')
-         
-        }}
+          onPress={async () => {
+            if (StoreReview.isAvailableAsync()) {
+             await StoreReview.requestReview()
+             .then(function(response){
+               console.log("response is",response)
+              })
+             .catch(e => { console.log(e) })
+            }else{
+              console.log("review no dey")
+            }
+          }}
           style={{
             justifyContent: "space-between",
             flexDirection: "row",

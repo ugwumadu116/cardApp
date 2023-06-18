@@ -86,7 +86,7 @@ export default function App(props) {
           </Text>
         </View>
 
-     <View style={{justifyContent:'center', alignItems:'center', marginTop:"50%"}}>
+     <View style={{justifyContent:'center', alignItems:'center', marginTop:"30%"}}>
      <Image style={{resizeMode: 'contain', }} source={require('../../assets/HomeNAV.png')} />  
 
      <Text

@@ -124,7 +124,7 @@ export default function App(props) {
                         onPress={() => {
                           // navigation.navigate('Signup')
 
-
+                          navigation.navigate("Setting")
 
                       }}
                     />

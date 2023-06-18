@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { StyleSheet, View, ScrollView, Pressable, Dimensions, TouchableOpacity,Image, ImageBackground } from 'react-native';
+import { StyleSheet, View, ScrollView, Pressable, Dimensions, TouchableOpacity,Image, ImageBackground , Modal} from 'react-native';
 import PhoneInput from '../../components/input/PhoneInput'
 import Input from '../../components/input'
 import { InputSecureText } from '../../components/input/InputSecureText'
@@ -23,8 +23,10 @@ import GiftCircleBox from '../../assets/js/GiftCircleBox'
 import Betting from '../../assets/js/Betting'
 import CopyIcon from '../../assets/js/CopyIcon'
 import Chat from '../../assets/js/Chat'
+import CloseGiftCard from '../../assets/js/CloseGiftCard'
 import CircleUpload from '../../assets/js/CircleUpload'
 import CardAdvert from '../../assets/cardAdvert.png'
+import GiftCardImg from '../../assets/GiftCardImg.png'
 // import { HomeCarosel } from '../../components/carosel/HomeCarosel'
 import { HomeCarosel } from '../../components/carosel/HomeVerticalscrol'
 
@@ -44,6 +46,8 @@ export default function App(props) {
   const [rememberMe, setRememberMe] = useState(false)
   const [currentPage, setCurrentPage] = useState(0)
   const [inputError, setInputError] = useState({email:'', password:'', password_confirmation:'',f_name:'', l_name:'', phone_number:'', activePickerValidation:'', address:''})
+  const [cardError, setCardError] = useState(false)
+
 
   return (
     <BottomBoardLayout bgColor="#F8F8FA" style={{container:{paddingLeft:'5%', paddingRight:'5%', }}} navigation={navigation}>
@@ -245,7 +249,7 @@ export default function App(props) {
 
         <TouchableOpacity
          onPress={() => {
-          navigation.navigate('GiftCards')
+          setCardError(true)
         }}
          style={{width:58, alignItems:'center', justifyContent:'center'}}>
         <GiftCards />
@@ -340,6 +344,95 @@ export default function App(props) {
 
 
     </ScrollView>
+
+    <Modal
+        animationType="slide"
+        transparent={true}
+        visible={cardError}
+        onRequestClose={() =>  {
+          setCardError(!cardError)
+        }}
+      >
+       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.6)', }}>
+
+       <ImageBackground
+          style={{
+            
+            width: "100%",
+            // height: 590,
+            height: 417,
+            // marginTop: 30,
+          }}
+          imageStyle={{
+            borderRadius: 20,
+            resizeMode: "contain",
+          }}
+          source={GiftCardImg}
+        >
+           <View
+              style={{
+                marginTop: "16%",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "100%",
+              }}
+            >
+                <View style={{marginTop:'0%', width:253}}>
+                   
+                   <Button 
+                     title="Buy gift cards"
+                     family="proximaNovaRegular"
+                     style={{backgroundColor: '#FFC300',  borderColor:"#FFC300", borderWidth:1, width:"100%", height:67, justifyContent:'center', alignItems:'center',}}
+                     textStyle={{fontSize: 20, fontWeight: '400',  color:"#000000", lineHeight:21, textAlign:'center'}}
+                     onPress={() => {
+                       setCardError(false)
+          navigation.navigate('BuyGiftCards')
+
+
+                     }}
+                   />
+
+                   
+               </View>
+
+             <View style={{marginTop:10, width:253}}>
+                  
+             <Button 
+                     title="Redeem gift cards"
+                     family="proximaNovaRegular"
+                     style={{backgroundColor: '#24BDFF',  borderColor:"#24BDFF", borderWidth:1, width:"100%", height:67, justifyContent:'center', alignItems:'center',}}
+                     textStyle={{fontSize: 20, fontWeight: '400',  color:"#000000", lineHeight:21, textAlign:'center'}}
+                     onPress={() => {
+                      
+
+                       setCardError(false)
+                       navigation.navigate('SellGiftCard')
+
+                     }}
+                   />
+
+
+               </View>
+
+
+
+             <TouchableOpacity
+                onPress={() => {
+                  setCardError(false)
+
+                }}
+              style={{marginTop:"10%"}}>
+              <CloseGiftCard />
+             </TouchableOpacity>
+
+            </View>
+
+
+          </ImageBackground>
+          
+        </View>
+
+      </Modal>
 
 
 

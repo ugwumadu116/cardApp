@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { StyleSheet, View, ScrollView, Pressable } from "react-native";
+import { StyleSheet, View, ScrollView, Pressable, Linking } from "react-native";
 import PhoneInput from "../../components/input/PhoneInput";
 import Input from "../../components/input";
 import { InputSecureText } from "../../components/input/InputSecureText";
@@ -87,7 +87,7 @@ export default function App(props) {
 
           <Pressable
          onPress={() => {
-        //   navigation.navigate('IdentityVerification')
+          Linking.openURL(`tel:0700033666223`)
        
       }}
           style={{
@@ -139,6 +139,8 @@ export default function App(props) {
         <Pressable
          onPress={() => {
         //   navigation.navigate('IdentityVerification')
+        Linking.openURL(`mailto:help@cardinafrica.ng`)
+
        
       }}
           style={{
@@ -188,6 +190,7 @@ export default function App(props) {
         <Pressable
          onPress={() => {
         //   navigation.navigate('IdentityVerification')
+        Linking.openURL('https://www.facebook.com/Cardinafrica_ng/ ')
        
       }}
           style={{
@@ -237,6 +240,7 @@ export default function App(props) {
         <Pressable
          onPress={() => {
         //   navigation.navigate('IdentityVerification')
+        Linking.openURL('https://twitter.com/cardinafrica_ng') 
        
       }}
           style={{
@@ -286,6 +290,7 @@ export default function App(props) {
         <Pressable
          onPress={() => {
         //   navigation.navigate('IdentityVerification')
+        Linking.openURL('https://www.instagram.com/cardinafrica_ng/')
        
       }}
           style={{

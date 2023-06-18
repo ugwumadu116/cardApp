@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { StyleSheet, View, ScrollView, Pressable , Dimensions} from 'react-native';
+import { StyleSheet, View, ScrollView, Pressable , Dimensions, TouchableOpacity} from 'react-native';
 import PhoneInput from '../../components/input/PhoneInput'
 import Input from '../../components/input'
 import { InputSecureText } from '../../components/input/InputSecureText'
@@ -25,7 +25,9 @@ import IconEntypo from 'react-native-vector-icons/Entypo'
 
 
 
-export default function App({navigation}) {
+export default function App(props) {
+  const {navigation} = props
+
 
   const [input, setInput] = useState({email:'', password:'', password_confirmation:'', f_name: '', l_name: '',phone_number:'',phone_code:'NG', address:'Nill' })
   const [rememberMe, setRememberMe] = useState(false)
@@ -38,7 +40,9 @@ export default function App({navigation}) {
     <View style={{marginTop:23,flexDirection:'row', alignItems:'center'}}>
         <Pressable
           hitSlop={27}
-          onPress={() => navigation.goBack()}
+          // onPress={() => navigation.goBack()}
+          onPress={() => navigation.navigate(props?.route?.params?.goBack? props?.route?.params?.goBack:"home")}
+
         >
           <GoBack />
         </Pressable>
@@ -130,7 +134,12 @@ export default function App({navigation}) {
 
 <View  style={{marginTop:10,}}/>
 
-        <View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
+        <TouchableOpacity 
+         onPress={() => {
+  
+            navigation.navigate('BillsReciept')
+          }}
+        style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
        <View style={{flexDirection:'row', alignItems:'center'}}>
         <TransactionWithdraw />
         <View style={{marginLeft:8}}>
@@ -148,9 +157,14 @@ export default function App({navigation}) {
         </View>
 
 
-        </View>
+        </TouchableOpacity>
 
-        <View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
+        <TouchableOpacity
+         onPress={() => {
+  
+          navigation.navigate('BillsReciept')
+        }}
+         style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
        <View style={{flexDirection:'row', alignItems:'center'}}>
         <TransactionDeposite />
         <View style={{marginLeft:8}}>
@@ -168,9 +182,14 @@ export default function App({navigation}) {
         </View>
 
 
-        </View>
+        </TouchableOpacity>
 
-        <View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
+        <TouchableOpacity 
+         onPress={() => {
+  
+          navigation.navigate('BillsReciept')
+        }}
+        style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
        <View style={{flexDirection:'row', alignItems:'center'}}>
         <TransactionWithdraw />
         <View style={{marginLeft:8}}>
@@ -188,7 +207,7 @@ export default function App({navigation}) {
         </View>
 
 
-        </View>
+        </TouchableOpacity>
 
 
         <View  style={{marginTop:120}}/>

@@ -28,38 +28,21 @@ import SettingsStack from './settingsStack'
 
 export default function App() {
   const ref = useRef(null);
-  const _renderIcon = (routeName, selectedTab) => {
-    let icon = '';
-
-    switch (routeName) {
-      case 'Accounts':
-        icon = 'user';
-        break;
-      case 'Transactions':
-        icon = 'user';
-        break;
-      case 'Cards':
-        icon = 'user';
-        break;
-      case 'Settings':
-        icon = 'settings-outline';
-        break;
-    }
-
-    return (
-      <Ionicons
-        name={icon}
-        size={25}
-        color={routeName === selectedTab ? 'black' : 'gray'}
-      />
-    );
-  };
+ 
   
-  const renderTabBar = ({ routeName, selectedTab, navigate }) => {
+  const renderTabBar = (props) => {
+    const { routeName, selectedTab, navigate } = props
     if(routeName === "Accounts"){
       return (
         <Pressable
-          onPress={() => navigate("Account")}
+          onPress={() => {
+        //     props.navigation.reset({
+        //       index: 0,
+        //       routes: [{ name: 'Accounts' }]
+        //  })
+        console.log(props.navigation, "props.navigation", );
+            navigate(routeName)
+          }}
           style={styles.tabbarItem}
         >
           <AccountIcons size={25} color={routeName === selectedTab ? '#3F37C9' : '#000000'} />

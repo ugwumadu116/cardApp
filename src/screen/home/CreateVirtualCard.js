@@ -296,7 +296,7 @@ Licenced
                         style={{backgroundColor: '#3F37C9',  borderColor:"#3F37C9", borderWidth:1, width:"100%", height:56, justifyContent:'center', alignItems:'center', }}
                         textStyle={{fontSize: 16, fontWeight: '400',  color:"#FFFFFF", lineHeight:20, textAlign:'center'}}
                         onPress={() => {
-                        //   navigation.navigate('Signup')
+                          navigation.navigate('RequestVirtualCard')
 
 
 

@@ -65,18 +65,7 @@ export default function App({navigation}) {
 
 {
   signUpFlow==="With email"?(
-    <View style={{width:'100%', marginTop:20}}>
-     <InputText
-              leftIcon={() => <IconFeather name={'mail'} size={21} color={"#3F37C9"} /> }
-              placeholder={'Enter email address'}
-              returnInput={(value) => {
-              // console.log(value);
-              }}
-            /> 
-
-</View>
-  ):(
-    <View style={{width:'100%', marginTop:20}}>
+   <View style={{width:'100%', marginTop:20}}>
     <PhoneInput
         value={input.phone_number.trim()}
         placeholder='Enter phone number'
@@ -86,6 +75,18 @@ export default function App({navigation}) {
         // setInputError({email:'', password:'', password_confirmation:'',f_name:"", l_name:"",phone_number:"", activePickerValidation:''})
         }}
       />
+
+</View>
+  ):(
+   
+ <View style={{width:'100%', marginTop:20}}>
+     <InputText
+              leftIcon={() => <IconFeather name={'mail'} size={21} color={"#3F37C9"} /> }
+              placeholder={'Enter email address'}
+              returnInput={(value) => {
+              // console.log(value);
+              }}
+            /> 
 
 </View>
   )

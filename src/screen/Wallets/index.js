@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { StyleSheet, View, ScrollView, Pressable, ImageBackground } from 'react-native';
+import { StyleSheet, View, ScrollView, Pressable, ImageBackground,TouchableOpacity, Modal , Dimensions } from 'react-native';
 import PhoneInput from '../../components/input/PhoneInput'
 import Input from '../../components/input'
 import { InputSecureText } from '../../components/input/InputSecureText'
@@ -14,6 +14,7 @@ import VirCard from '../../assets/VirCard.png'
 import TuneIcon from '../../assets/js/Tune'
 import ManageIcon from '../../assets/js/Manage'
 import WidthdrawIcon from '../../assets/js/Widthdraw'
+import DisableCard from '../../assets/js/DisableCard'
 import FundIcon from '../../assets/js/FundIcon'
 import DisableIcon from '../../assets/js/Disable'
 import TransactionDeposite from '../../assets/js/transactionDeposite'
@@ -32,6 +33,7 @@ export default function App(props) {
   const [input, setInput] = useState({email:'', password:'', password_confirmation:'', f_name: '', l_name: '',phone_number:'',phone_code:'NG', address:'Nill' })
   const [rememberMe, setRememberMe] = useState(false)
   const [inputError, setInputError] = useState({email:'', password:'', password_confirmation:'',f_name:'', l_name:'', phone_number:'', activePickerValidation:'', address:''})
+  const [cardError, setCardError] = useState(false)
 
   return (
     <GlassBoardLayout bgColor="#F8F8FA"  style={{container:{paddingLeft:'5%', paddingRight:'5%'}}} navigation={navigation}>
@@ -87,25 +89,44 @@ export default function App(props) {
 
         <View style={{marginTop:20,
            borderRadius:20, backgroundColor:'#FFFFFF', paddingVertical:21, width:'100%', justifyContent:'space-around', alignItems:'center', flexDirection:'row'}}>
-          <Pressable style={{alignItems:'center'}}>
+          <Pressable
+           onPress={() => {
+  
+            navigation.navigate('ManageCards')
+          }}
+           style={{alignItems:'center'}}>
             <ManageIcon />
         <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:30, fontWeight:'400', marginTop:10}}>Manage</Text>
 
           </Pressable>
 
-          <Pressable style={{alignItems:'center'}}>
+
+          <Pressable 
+           onPress={() => {
+  
+            navigation.navigate('WithdrawFromCard')
+          }}
+           style={{alignItems:'center'}}>
             <WidthdrawIcon />
         <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:30, fontWeight:'400', marginTop:10}}>Withdraw</Text>
 
           </Pressable>
 
-          <Pressable style={{alignItems:'center'}}>
+          <Pressable
+           onPress={() => {
+            console.log("hikmm")
+            navigation.navigate('FundCard')
+          }}
+           style={{alignItems:'center'}}>
             <FundIcon />
         <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:30, fontWeight:'400', marginTop:10}}>Fund</Text>
 
           </Pressable>
 
-          <Pressable style={{alignItems:'center'}}>
+          <Pressable onPress={() => {
+                        setCardError(true)
+
+          }} style={{alignItems:'center'}}>
             <DisableIcon />
         <Text family="proximaNovaRegular"  style={{color:"#000000", fontSize:14, lineHeight:30, fontWeight:'400', marginTop:10}}>Disable</Text>
 
@@ -137,8 +158,12 @@ export default function App(props) {
 
 
 <View  style={{marginTop:10,}}/>
-
-        <View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
+<TouchableOpacity 
+         onPress={() => {
+  
+            navigation.navigate('BillsReciept')
+          }}
+        style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
        <View style={{flexDirection:'row', alignItems:'center'}}>
         <TransactionWithdraw />
         <View style={{marginLeft:8}}>
@@ -156,9 +181,14 @@ export default function App(props) {
         </View>
 
 
-        </View>
+        </TouchableOpacity>
 
-        <View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
+        <TouchableOpacity
+         onPress={() => {
+  
+          navigation.navigate('BillsReciept')
+        }}
+         style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
        <View style={{flexDirection:'row', alignItems:'center'}}>
         <TransactionDeposite />
         <View style={{marginLeft:8}}>
@@ -176,9 +206,14 @@ export default function App(props) {
         </View>
 
 
-        </View>
+        </TouchableOpacity>
 
-        <View style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
+        <TouchableOpacity 
+         onPress={() => {
+  
+          navigation.navigate('BillsReciept')
+        }}
+        style={{justifyContent:'space-between',flexDirection:'row', alignItems:'center', marginTop:6, backgroundColor:'#FFFFFF', borderRadius:10, paddingTop:15, paddingBottom:15, paddingLeft:10, paddingRight:14}}>
        <View style={{flexDirection:'row', alignItems:'center'}}>
         <TransactionWithdraw />
         <View style={{marginLeft:8}}>
@@ -196,7 +231,8 @@ export default function App(props) {
         </View>
 
 
-        </View>
+        </TouchableOpacity>
+
 
 
         <View  style={{marginTop:120}}/>
@@ -207,6 +243,112 @@ export default function App(props) {
 
 
       </ScrollView>
+
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={cardError}
+        onRequestClose={() =>  {
+          setCardError(!cardError)
+        }}
+      >
+       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.6)', }}>
+          <View style={{
+            minHeight:333,
+            backgroundColor: '#FFFFFF',
+            borderRadius: 17,
+              
+            width: Math.round(Dimensions.get('window').width /1.3),
+            shadowColor: 'rgba(0, 0, 0, 0.25)',
+            shadowOffset: {
+              width: 0,
+              height: 4
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 14,
+            elevation: 5,
+            padding: 10,
+          }}>
+
+            <View style={{
+              justifyContent: 'center', 
+              flexDirection: 'column',
+              alignItems: 'center', 
+              paddingLeft: 10,
+              paddingRight: 10,
+              // marginTop: 3
+              }}>
+                <View style={{marginTop:35,   marginBottom:25,}}>
+                  <DisableCard />
+                </View>
+             
+             <Text
+                family="proximaNovaSemiBold"
+                style={{
+                  color: "#000000",
+                  fontSize: 12,
+                  lineHeight: 16,
+                  fontWeight: "400",
+                  marginBottom:5,
+
+                }}
+              >
+            Disable card
+              </Text>
+
+              <Text
+                family="proximaNovaRegular"
+                style={{
+                  color: "#000000",
+                  fontSize: 12,
+                  lineHeight: 16,
+                  fontWeight: "400",
+                  marginBottom:20,
+                }}
+              >
+              Are you sure you want to disable this card?
+              </Text>
+
+            
+
+              <View style={{marginTop:'0%', width:'100%'}}>
+                   
+                    <Button 
+                      title="YES"
+                      family="proximaNovaRegular"
+                      style={{backgroundColor: '#3F37C9',  borderColor:"#3F37C9", borderWidth:1, width:"100%", height:56, justifyContent:'center', alignItems:'center',}}
+                      textStyle={{fontSize: 16, fontWeight: '400',  color:"#FFFFFF", lineHeight:20, textAlign:'center'}}
+                      onPress={() => {
+                        setCardError(false)
+
+                      }}
+                    />
+
+                    
+                </View>
+
+              <View style={{marginTop:10, width:'100%'}}>
+                   
+              <Button 
+                      title="No"
+                      family="proximaNovaRegular"
+                      style={{backgroundColor: '#FFFFFF',  borderColor:"#3F37C9", borderWidth:1, width:"100%", height:56, justifyContent:'center', alignItems:'center',}}
+                      textStyle={{fontSize: 16, fontWeight: '400',  color:"#3F37C9", lineHeight:20, textAlign:'center'}}
+                      onPress={() => {
+                        setCardError(false)
+
+                      }}
+                    />
+
+
+                </View>
+            </View>
+            
+
+          </View>
+        </View>
+
+      </Modal>
 
        </GlassBoardLayout> 
   );
