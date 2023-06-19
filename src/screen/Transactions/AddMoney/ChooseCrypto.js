@@ -6,6 +6,7 @@ import {
   Pressable,
   TouchableOpacity,
   TextInput,
+  Image,
 } from "react-native";
 import PhoneInput from "../../../components/input/PhoneInput";
 import Input from "../../../components/input";
@@ -19,7 +20,7 @@ import GoBack from "../../../assets/js/Goback";
 import CircleCardToup from "../../../assets/js/CircleCardToup";
 import CircleCashDeposite from "../../../assets/js/CircleCashDeposite";
 import CircleCardin from "../../../assets/js/CircleCardin";
-import CircleUsdt from "../../../assets/js/crypto/CircleUsdt";
+import CircleUsdt from "../../../assets/svgToImg/circleCrypto.png";
 import IconFeather from "react-native-vector-icons/Feather";
 import IconFontisto from "react-native-vector-icons/Fontisto";
 
@@ -115,7 +116,8 @@ export default function App(props) {
         <Pressable onPress={() => navigation.navigate("AddMoneyBuyCrypto")} style={{marginTop:17, backgroundColor:'#FFFFFF', borderRadius:10, justifyContent:'center', padding:12, paddingLeft:9}}>
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
         <View style={{flexDirection:'row', alignItems:'center',}}>
-        <CircleUsdt />
+        <Image style={{resizeMode: 'contain', }} source={CircleUsdt} />  
+
     
 <View style={{marginLeft:18,}}>
 <Text family="proximaNovaSemiBold"  style={{color:"#000000", fontSize:14, lineHeight:20, fontWeight:'400',}}>USDT</Text>

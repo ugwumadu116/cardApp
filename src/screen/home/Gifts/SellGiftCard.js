@@ -150,7 +150,7 @@ export default function App(props) {
 
   return (
     <GlassBoardLayout
-      bgColor="#F8F8FA"
+      bgColor="#FFFFFF"
       style={{ container: { paddingLeft: "5%", paddingRight: "5%" } }}
       navigation={navigation}
     >

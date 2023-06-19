@@ -78,19 +78,19 @@ export default function App(props) {
           style={{
             
             width: "100%",
-            // height: 590,
-            height: 614,
-            // marginTop: 30,
+            height: 536,
+            // height: 614,
+            marginTop: 30,
           }}
           imageStyle={{
             borderRadius: 20,
-            resizeMode: "contain",
+            resizeMode: "stretch",
           }}
           source={billsuccess}
         >
           <View
             style={{
-              marginTop: "46%",
+              marginTop: "36%",
               alignItems: "center",
               justifyContent: "center",
               width: "100%",
@@ -430,7 +430,7 @@ export default function App(props) {
             </Text>
           </View>
 
-<View style={{marginTop:"6%"}} />
+<View style={{marginTop:"8%"}} />
 
           <View
             style={{
@@ -515,7 +515,7 @@ export default function App(props) {
 
         </ImageBackground>
 
-        <View style={{marginTop:'0%', alignItems:'center', flexDirection:'row', justifyContent:'space-between', width:'100%'}}>
+        <View style={{marginTop:'20%', alignItems:'center', flexDirection:'row', justifyContent:'space-between', width:'100%'}}>
                     <Button 
                       title="Report an Error"
                       family="proximaNovaRegular"

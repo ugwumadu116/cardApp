@@ -70,12 +70,12 @@ export default function App(props) {
             // paddingRight:12,
             // paddingTop:21,
             width:'100%',
-            height:614,
+            height:587,
             marginTop:30,
           }}
           imageStyle={{
             borderRadius:20,
-            resizeMode: "contain",
+            resizeMode: "stretch",
 
         }}
           source={PaymentSuccesInfo}
@@ -92,7 +92,7 @@ export default function App(props) {
             // marginTop:1,
             position:'absolute',
             width:"100%",
-            top:65,
+            top:25,
 
 
         
@@ -107,7 +107,7 @@ export default function App(props) {
 
                 </View>
                 <View style={{
-            marginTop:85,
+            marginTop:'35%',
             alignItems:'center',
             justifyContent:'center',
             width:'100%',

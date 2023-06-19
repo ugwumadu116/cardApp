@@ -44,6 +44,7 @@ export default function App(props) {
             });
     
             if (data.length > 0) {
+              // console.log("data", data[0].phoneNumbers[0].number);
               setContactList(data)
               // const contact = data[0];
               // console.log(contact.name);
@@ -642,17 +643,23 @@ style={{leftStyle:{}, rightStyle:{marginRight:"5%"}, inputFenceFocus:{background
                 >
                 {itm.name}
                 </Text>
-                <Text
-                  family="proximaNovaLight"
-                  style={{
-                    color: "#B2B2B2",
-                    fontSize: 12,
-                    lineHeight: 14,
-                    fontWeight: "400",
-                  }}
-                >
-                  {itm.phoneNumbers[0].number}
-                </Text>
+                {
+                  itm.phoneNumbers?(
+                    <Text
+                    family="proximaNovaLight"
+                    style={{
+                      color: "#B2B2B2",
+                      fontSize: 12,
+                      lineHeight: 14,
+                      fontWeight: "400",
+                    }}
+                  >
+                    {itm.phoneNumbers[0]?.number || "Phone number"}
+                    {/* number */}
+                  </Text>
+                  ):null
+                }
+               
               </View>
             </View>
           

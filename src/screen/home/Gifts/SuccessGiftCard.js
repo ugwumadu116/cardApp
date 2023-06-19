@@ -173,12 +173,15 @@ export default function App(props) {
             // paddingRight:12,
             // paddingTop:21,
             width:'100%',
-            height:614,
-            marginTop:30,
+            height:534,
+            // height:614,
+            marginTop:70,
           }}
           imageStyle={{
             borderRadius:20,
-            resizeMode: "contain",
+            // resizeMode: "contain",
+            resizeMode: "stretch",
+            // 'cover', 'contain', 'stretch', 'repeat', 'center'
 
         }}
           source={GiftSuccess}
@@ -195,7 +198,7 @@ export default function App(props) {
             // marginTop:1,
             position:'absolute',
             width:"100%",
-            top:65,
+            top:0,
 
 
         
@@ -217,7 +220,7 @@ export default function App(props) {
 
                 </TouchableOpacity>
 
-               <View style={{marginTop:"60%", alignItems:'center'}}>
+               <View style={{marginTop:"70%", alignItems:'center'}}>
                <View style={{ borderRadius:20, height:133, borderColor:'#D9D9D9',borderWidth:1, width:"80%", padding:17, alignItems:'center', justifyContent:"center"}}>
                 <View style={{flexDirection:'row', alignItems:'center'}}>
                         <Image style={{resizeMode: 'contain', }} source={gifts[selectedCard].logo} />  
@@ -272,7 +275,7 @@ export default function App(props) {
                         routes: [{ name: 'Homes' }]
                    })
                 }}
-                style={{marginTop:'7%', alignItems:'center', justifyContent:'center'}}>
+                style={{marginTop:'10%', alignItems:'center', justifyContent:'center'}}>
                 <Share />
 
                </TouchableOpacity>

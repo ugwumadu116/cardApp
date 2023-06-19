@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { StyleSheet, View, ScrollView, Pressable, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, View, ScrollView, Pressable, TouchableOpacity,Image, TextInput } from 'react-native';
 import PhoneInput from '../../../components/input/PhoneInput'
 import Input from '../../../components/input'
 import { InputSecureText } from '../../../components/input/InputSecureText'
@@ -15,7 +15,8 @@ import CircleCardin from '../../../assets/js/CircleCardin'
 import CircleCryptoDeposite from '../../../assets/js/CircleCryptoDeposite'
 import IconFeather from 'react-native-vector-icons/Feather'
 import IconFontisto from 'react-native-vector-icons/Fontisto'
-import CircleUsdt from "../../../assets/js/crypto/CircleUsdt";
+import CircleUsdt from "../../../assets/svgToImg/Tether.png";
+
 
 
 export default function App(props) {
@@ -57,7 +58,8 @@ React.useLayoutEffect(() => {
       elevation: 12,
          height:65, borderRadius:100}}>
           <View style={{ flexDirection:'row', alignItems:'center',}}>
-          <CircleUsdt />
+        <Image style={{resizeMode: 'contain', }} source={CircleUsdt} />  
+
           <View style={{marginLeft:15}}>
           <Text family="proximaNovaSemiBold"  style={{color:"#000000", fontSize:14, lineHeight:20, fontWeight:'400',}}>USDT</Text>
           <Text family="proximaNovaRegular"  style={{color:"#B2B2B2", fontSize:12, lineHeight:14, fontWeight:'400',}}>(TetherUS)</Text>
@@ -89,7 +91,7 @@ React.useLayoutEffect(() => {
 
               
         <Text family="proximaNovaRegular"  style={{color:"#000000",fontSize: 36, opacity: 0, textAlign:'center', lineHeight:40, fontWeight:'400', }}>{input.email}</Text>
-        <Text family="proximaNovaRegular"  style={{color:"#000000",fontSize: 14, textAlign:'right', lineHeight:20, fontWeight:'400', marginTop:10, marginLeft:20}}>NGN</Text>
+        <Text family="proximaNovaRegular"  style={{color:"#000000",fontSize: 14, textAlign:'right', lineHeight:20, fontWeight:'400', marginTop:10, marginLeft:"10%",}}>NGN</Text>
           </View>
 
           <TextInput

@@ -27,9 +27,17 @@ import CloseGiftCard from '../../assets/js/CloseGiftCard'
 import CircleUpload from '../../assets/js/CircleUpload'
 import CardAdvert from '../../assets/cardAdvert.png'
 import GiftCardImg from '../../assets/GiftCardImg.png'
-// import { HomeCarosel } from '../../components/carosel/HomeCarosel'
 import { HomeCarosel } from '../../components/carosel/HomeVerticalscrol'
 
+
+import ImgAirtime from '../../assets/svgToImg/airtime.png'
+import ImgBetting from '../../assets/svgToImg/Betting.png'
+import ImgBills from '../../assets/svgToImg/Bills.png'
+import ImgcableTv from '../../assets/svgToImg/cableTv.png'
+import ImgData from '../../assets/svgToImg/Data.png'
+import ImgGcard from '../../assets/svgToImg/Gcard.png'
+import Imgmore from '../../assets/svgToImg/more.png'
+import ImgVcard from '../../assets/svgToImg/Vcard.png'
 
 
 
@@ -203,7 +211,10 @@ export default function App(props) {
             navigation.navigate('Airtime')
           }}
            style={{width:58, alignItems:'center', justifyContent:'center'}}>
-          <Airtime />
+          <Image style={{resizeMode: 'contain', }} source={ImgAirtime} />  
+          <Text family="proximaNovaRegular" 
+         style={{color:"#000000", fontSize:12, marginTop:10,
+         lineHeight:13, fontWeight:'400',}}>Airtime</Text>
             
           </TouchableOpacity>
 
@@ -212,7 +223,10 @@ export default function App(props) {
               navigation.navigate('Data')
             }}
            style={{width:58, alignItems:'center', justifyContent:'center'}}>
-          <Data />
+           <Image style={{resizeMode: 'contain', }} source={ImgData} />  
+          <Text family="proximaNovaRegular" 
+         style={{color:"#000000", fontSize:12, marginTop:10,
+         lineHeight:13, fontWeight:'400',}}>Data</Text>
             
           </TouchableOpacity>
 
@@ -221,7 +235,11 @@ export default function App(props) {
             navigation.navigate('Betting')
           }}
            style={{width:58, alignItems:'center', justifyContent:'center'}}>
-          <Betting />
+          <Image style={{resizeMode: 'contain', }} source={ImgBetting} />  
+          <Text family="proximaNovaRegular" 
+         style={{color:"#000000", fontSize:12, marginTop:10,
+         lineHeight:13, fontWeight:'400',}}>Betting</Text>
+            
             
           </TouchableOpacity>
 
@@ -230,7 +248,11 @@ export default function App(props) {
             navigation.navigate('CableTv')
           }}
           style={{width:58, alignItems:'center', justifyContent:'center'}}>
-          <CableTv />
+          <Image style={{resizeMode: 'contain', }} source={ImgcableTv} />  
+          <Text family="proximaNovaRegular" 
+         style={{color:"#000000", fontSize:12, marginTop:10,
+         lineHeight:13, fontWeight:'400',}}>Cable TV</Text>
+            
             
           </TouchableOpacity>
           
@@ -243,7 +265,10 @@ export default function App(props) {
           navigation.navigate('VirtualCard')
         }}
          style={{width:58, alignItems:'center', justifyContent:'center'}}>
-        <VirtualCards />
+        <Image style={{resizeMode: 'contain', }} source={ImgVcard} />  
+          <Text family="proximaNovaRegular" 
+         style={{color:"#000000", fontSize:12, marginTop:10,
+         lineHeight:13, fontWeight:'400',}}>Virtual card </Text>
     
           </TouchableOpacity>
 
@@ -252,7 +277,12 @@ export default function App(props) {
           setCardError(true)
         }}
          style={{width:58, alignItems:'center', justifyContent:'center'}}>
-        <GiftCards />
+        {/* <GiftCards /> */}
+        <Image style={{resizeMode: 'contain', }} source={ImgGcard} />  
+          <Text family="proximaNovaRegular" 
+         style={{color:"#000000", fontSize:12, marginTop:10,
+         lineHeight:13, fontWeight:'400',}}>Gift cards </Text>
+    
     
           </TouchableOpacity>
 
@@ -261,7 +291,11 @@ export default function App(props) {
           navigation.navigate('Bills')
         }}
          style={{width:58, alignItems:'center', justifyContent:'center'}}>
-        <Bills />
+         <Image style={{resizeMode: 'contain', }} source={ImgBills} />  
+          <Text family="proximaNovaRegular" 
+         style={{color:"#000000", fontSize:12, marginTop:10,
+         lineHeight:13, fontWeight:'400',}}>Bills </Text>
+    
     
           </TouchableOpacity>
 
@@ -270,7 +304,12 @@ export default function App(props) {
           navigation.navigate('More')
         }}
          style={{width:58, alignItems:'center', justifyContent:'center'}}>
-        <MoreIcon />
+        {/* <MoreIcon /> */}
+        <Image style={{resizeMode: 'contain', }} source={ImgBills} />  
+          <Text family="proximaNovaRegular" 
+         style={{color:"#000000", fontSize:12, marginTop:10,
+         lineHeight:13, fontWeight:'400',}}>More </Text>
+    
     
           </TouchableOpacity>
         </View>
